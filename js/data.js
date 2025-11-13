@@ -12,10 +12,9 @@ export const imageUrls = ['images/project-1.jpg', 'images/project-3.jpg', 'image
 export const buttonConfigs = [['View Website'], ['View Website'], ['View Website']];
 
 export const buttonLinks = [
-    ['https://example.com/hogangs', 'https://example.com/hogangs-docs'],
-    ['https://example.com/loccitane'],
-    ['https://example.com/asan'],
-    ['https://example.com/mcdelivery'],
+    ['https://example.com/hogangs'],
+    ['https://museum-ebon.vercel.app/'],
+    ['https://portfolio-nu-nine-33.vercel.app/'],
 ];
 
 // team - projectCards .data
