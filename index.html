@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>양한슬 포트폴리오</title>
+        <script>
+            try {
+                history.scrollRestoration = 'manual';
+            } catch (e) {}
+
+            // 초기 스크롤 즉시 이동(스무스 방지)
+            document.documentElement.style.scrollBehavior = 'auto';
+
+            // #hash가 있으면 점프하기 전에 URL만 정리
+            if (location.hash) {
+                history.replaceState(null, '', location.pathname + location.search);
+            }
+
+            // bfcache로 돌아올 때도 항상 0,0
+            window.addEventListener('pageshow', function (e) {
+                if (e.persisted) window.scrollTo(0, 0);
+            });
+        </script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+        />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- 마우스 따라다니는 이미지 -->
+        <div class="cursor-follower">
+            <img src="images/mouse.png" alt="barcodescanner" />
+        </div>
+
+        <!-- === Airplane Intro Overlay === -->
+        <div class="ap-overlay" aria-hidden="false">
+            <div class="ap-switch">
+                <!-- sky -->
+                <div class="ap-sky">
+                    <div class="ap-clouds">
+                        <div class="ap-cloud"></div>
+                        <div class="ap-cloud"></div>
+                        <div class="ap-cloud"></div>
+                        <div class="ap-cloud"></div>
+                        <div class="ap-cloud"></div>
+                        <div class="ap-cloud"></div>
+                    </div>
+                </div>
+
+                <!-- airport -->
+                <div class="ap-airport">
+                    <div class="ap-lights">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="ap-runway"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="ap-lights">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <!-- airplane button -->
+                <button class="ap-btn" type="button" aria-label="이륙하기">
+                    <svg class="ap-icon" viewBox="0 0 140 140" aria-hidden="true">
+                        <path
+                            d="M45.851,139.316s13.2-12.046,11.842-49.753c-41.162-3.584-41.285-3.448-41.285-3.448L10.1,97.9H0L7.725,69.815h0L0,41.729H10.1l6.308,11.785s.123.136,41.285-3.449C59.047,12.359,45.851.314,45.851.314s15.674-.706,17.187,0c.364.169,2.2,3.17,4.789,7.635H82.858a6,6,0,0,1,0,12H74.635c1.651,2.949,3.352,6.007,5.009,9h21.213a6,6,0,1,1,0,12h-14.6C89.473,46.806,91.7,50.9,91.7,50.9s15.527.144,31.431,1.838S140.347,69.48,140.347,69.48v.32c0,.01,0,.02,0,.031l0,.206s-1.31,15.163-17.215,16.856S91.7,88.73,91.7,88.73s-2.228,4.093-5.442,9.95h14.6a6,6,0,1,1,0,12H79.645c-1.658,2.993-3.358,6.051-5.009,9h8.222a6,6,0,1,1,0,12H67.828c-2.587,4.465-4.426,7.465-4.79,7.636a22.453,22.453,0,0,1-5.128.313C52.817,139.63,45.851,139.316,45.851,139.316Z"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 네비게이션 -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#section1">About</a></li>
+                <li><a href="#section2">Creations</a></li>
+                <li><a href="#section3">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 스크롤 인디케이터 -->
+        <div class="scroll-indicator">
+            <div class="scroll-dot active" data-section="0"></div>
+            <div class="scroll-dot" data-section="1"></div>
+            <div class="scroll-dot" data-section="2"></div>
+            <div class="scroll-dot" data-section="3"></div>
+        </div>
+
+        <div id="wrap">
+            <!-- home 섹션 -->
+            <section id="home" class="home">
+                <img src="images/visual-bg.png" alt="home Background" class="background" />
+                <img src="images/ticket.png" alt="티켓이미지" class="visual-img" />
+                <div class="barcode"><img src="images/barcode.png" alt="barcode" /></div>
+            </section>
+
+            <!-- 메인 섹션들 -->
+            <section id="section1" class="con con1">
+                <div class="inner">
+                    <div class="bg">
+                        <div data-aos="fade-right" data-aos-duration="700">
+                            <p class="bg1">ABOUT</p>
+                        </div>
+                        <div data-aos="fade-up-left" data-aos-duration="1000" data-aos-delay="1000">
+                            <p class="bg2">ME</p>
+                        </div>
+                    </div>
+                    <div class="passport">
+                        <div class="left">
+                            <ul>
+                                Name :
+                                <li>양한슬(27세)</li>
+                            </ul>
+                            <ul>
+                                Tell :
+                                <li>010 - 5588 - 2609</li>
+                            </ul>
+                            <ul>
+                                Email :
+                                <li>gkstmftt@naver.com</li>
+                            </ul>
+                            <ul>
+                                Edu. :
+                                <li>충청대학교 유아교육과 졸업</li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                Career :
+                                <li>
+                                    <div class="desc">
+                                        <p>22.03 - 24.03 강성짐</p>
+                                        <p>24.03 - 24.11 ENTS</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                License :
+                                <li>
+                                    <div class="desc">
+                                        <p>25.06 정보처리기능사 (필기)</p>
+                                        <p>24.06 킥복싱 지도자 3급</p>
+                                        <p>22.02 2종 보통 운전면허</p>
+                                        <p>23.02 교원자격증</p>
+                                        <p>22.02 한국사 능력 검정시험 3급</p>
+                                        <p>17.07 제빵 기능사</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                Skill :
+                                <li>
+                                    <div class="desc">
+                                        <p>HTML / CSS<img src="images/skill1.png" alt="" /></p>
+                                        <p>JavaScript<img src="images/skill2.png" alt="" /></p>
+                                        <p>scss<img src="images/skill3.png" alt="" /></p>
+                                        <p>
+                                            Photoshop / Illustrator<img
+                                                src="images/skill4.png"
+                                                alt=""
+                                            />
+                                        </p>
+                                        <p>React<img src="images/skill5.png" alt="" /></p>
+                                        <p>Github<img src="images/skill6.png" alt="" /></p>
+                                        <p>Figma<img src="images/skill7.png" alt="" /></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //무한 텍스트 -->
+            <section class="marquee">
+                <div class="marquee__inner">
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                    <div class="marquee__part">
+                        More About Me
+                        <div class="arrow">
+                            <img src="images/icon-airplane.png" alt="비행기아이콘" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- //타임라인 -->
+            <section class="con con1_2 postcard">
+                <div class="gallery">
+                    <div class="inner">
+                        <ul class="imgbox">
+                            <li class="img1 upBox"><img src="images/postcard-1.png" alt="" /></li>
+                            <li class="img2 upBox"><img src="images/postcard-2.png" alt="" /></li>
+                            <li class="img3 upBox"><img src="images/postcard-3.png" alt="" /></li>
+                            <li class="img4 upBox"><img src="images/postcard-4.png" alt="" /></li>
+                            <li class="img5 upBox"><img src="images/postcard-5.png" alt="" /></li>
+                            <li class="img6 upBox"><img src="images/postcard-6.png" alt="" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!--// 텍스트 -->
+            <section class="con con1_3">
+                <p class="title">Who am I ?</p>
+                <div class="textBox">
+                    <div class="mask">
+                        <span class="text">
+                            I learned to see the world through users’ eyes by understanding
+                            others<br />
+                            and mediating perspectives across different contexts. <br />Every step
+                            along unfamiliar paths with diverse people felt like a journey,<br />
+                            and that journey led me to become a publisher who <br />designs
+                            experiences.<br />Each new challenge is another trip and a fresh
+                            beginning of learning—and today, I’m still moving toward new skies.
+                        </span>
+                    </div>
+                </div>
+                <p>
+                    여러 환경 속에서 타인을 이해하고 의견을 조율하는 과정에서 사용자의 눈으로 세상을
+                    바라보는 법을 익혔습니다. <br />낯선 길을 걸으며 다양한 사람들과 함께한 모든
+                    순간은 여행이었습니다. 지금까지의 여정은 저를 ‘경험을 설계하는 퍼블리셔’로
+                    이끌었습니다. <br />새로운 도전은 언제나 또 다른 여행이자 배움의 시작입니다.
+                    저는 오늘도 새로운 하늘을 향해 나아가고 있습니다.
+                </p>
+            </section>
+
+            <!-- //팀 작업 카드 -->
+            <!-- 모달창 -->
+            <section id="section2" class="con con3_1">
+                <h2>My Creations</h2>
+                <strong>사용자 경험의 새로운 기준을 제시하다</strong>
+                <div class="list">
+                    <div class="box">
+                        <ul>
+                            <li>ios & Web APP Design</li>
+                            <li class="title">HOGANGS</li>
+                            <li class="subject">호텔 예약과 OTT를 동시에</li>
+                            <li class="img">
+                                <img
+                                    src="images/list1.png"
+                                    alt="호강스"
+                                    data-modal-target="#modal-hogangs"
+                                    role="button"
+                                    tabindex="0"
+                                />
+                            </li>
+                            <li class="period">2025.08.20 ~2025.09.23 (4week)</li>
+                            <li class="skill">
+                                <img src="images/logo-react.png" alt="리액트" />
+                                <img src="images/logo-scss.png" alt="scss" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <ul>
+                            <li>ios & Web APP Design</li>
+                            <li class="title">L’OCCITANE</li>
+                            <li class="subject">당신을 위한 선물 더 쉽고 간단하게</li>
+                            <li class="img">
+                                <img
+                                    src="images/list2.png"
+                                    alt="록시땅"
+                                    data-modal-target="#modal-loccitane"
+                                    role="button"
+                                    tabindex="0"
+                                />
+                            </li>
+                            <li class="period">2025.07.18 ~2025.08.18 (4week)</li>
+                            <li class="skill">
+                                <img src="images/logo-react.png" alt="로고" />
+                                <img src="images/logo-css.png" alt="로고" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <ul>
+                            <li>Web UI/UX r.design</li>
+                            <li class="title">서울아산병원</li>
+                            <li class="subject">믿음 위에 디자인을 더하다</li>
+                            <li class="img">
+                                <img
+                                    src="images/list3.png"
+                                    alt="병원"
+                                    data-modal-target="#modal-asan"
+                                    role="button"
+                                    tabindex="0"
+                                />
+                            </li>
+                            <li class="period">2025.07.01 ~2025.07.10 (1week)</li>
+                            <li class="skill">
+                                <img src="images/logo-html.png" alt="html" />
+                                <img src="images/logo-js.png" alt="js" />
+                                <img src="images/logo-css.png" alt="css" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <ul>
+                            <li>ios APP r.design</li>
+                            <li class="title">McDelivery</li>
+                            <li class="subject">맥도날드 배달, 이제 더 쉽게!</li>
+                            <li class="img">
+                                <img
+                                    src="images/list4.png"
+                                    alt="맥딜리버리"
+                                    data-modal-target="#modal-mcdelivery"
+                                    role="button"
+                                    tabindex="0"
+                                />
+                            </li>
+                            <li class="period">2025.04.09 ~2025.04.15 (1week)</li>
+                            <li class="skill">
+                                <img
+                                    src="images/logo-pigma.png"
+                                    alt="피그마"
+                                    data-modal-target="#modal-mcdelivery"
+                                    role="button"
+                                    tabindex="0"
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal: 호강스 -->
+            <div
+                id="modal-hogangs"
+                class="modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalTitleHogangs"
+                aria-hidden="true"
+            >
+                <div class="modal__backdrop" data-modal-close></div>
+                <div class="modal__dialog" tabindex="-1">
+                    <div class="modal__body">
+                        <div class="modal__content">
+                            <p class="type">React</p>
+                            <h2 id="modalTitle">호강스</h2>
+                            <p class="desc">
+                                호텔·미용 예약부터 결제·내역 관리, OTT 감상까지 하나의 흐름으로
+                                자연스럽게 이어지는 통합 경험을 제공합니다.
+                            </p>
+                            <p class="percent">[ 기여도 ] : 디자인 40% , 코딩 40%, 기획 30%</p>
+                            <div class="btns">
+                                <p class="btn">기획서</p>
+                                <p class="btn">View Web Page</p>
+                            </div>
+                            <div class="page">
+                                <img src="images/hogang-page.png" alt="호강스" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="modal-loccitane"
+                class="modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalTitleLoc"
+                aria-hidden="true"
+                data-size="lg"
+            >
+                <div class="modal__backdrop" data-modal-close></div>
+                <div class="modal__dialog" tabindex="-1">
+                    <div class="modal__body">
+                        <div class="modal__content">
+                            <p class="type">React</p>
+                            <h2 id="modalTitleLoc">록시땅</h2>
+                            <p class="desc">
+                                제품 라인을 한눈에 볼 수 있도록 UI를 단순화하고, 친환경 원료와
+                                브랜드 철학을 시각화해 탐색 과정에서 자연스럽게 <br />브랜드 가치를
+                                느끼도록 했습니다.
+                            </p>
+                            <p class="percent">[ 기여도 ] : 디자인 50% , 코딩 50%, 기획 20%</p>
+                            <div class="btns">
+                                <p class="btn">기획서</p>
+                                <p class="btn">View Web Page</p>
+                            </div>
+                            <div class="page">
+                                <img src="images/l'occitane-page.png" alt="록시땅" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: 서울아산병원 -->
+            <div
+                id="modal-asan"
+                class="modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalTitleAsan"
+                aria-hidden="true"
+            >
+                <div class="modal__backdrop" data-modal-close></div>
+                <div class="modal__dialog" tabindex="-1">
+                    <div class="modal__body">
+                        <div class="modal__content">
+                            <p class="type">HTML</p>
+                            <h2 id="modalTitleLoc">서울아산병원</h2>
+                            <p class="desc">
+                                병원 웹사이트를 현대적으로 리디자인하고 로고 컬러를 살린 고급·신뢰
+                                메인 컬러와 동적 요소로 편안한 <br />
+                                정보 탐색 경험을 제공합니다.
+                            </p>
+                            <p class="percent">[ 기여도 ] : 디자인 40% , 코딩 40%, 기획 20%</p>
+                            <div class="btns">
+                                <p class="btn">기획서</p>
+                                <p class="btn">View Web Page</p>
+                            </div>
+                            <div class="page">
+                                <img src="images/asanmedicalcenter-page.png" alt="아산병원 상세" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: 맥딜리버리 (예: 아주 큰 이미지용으로 인라인 변수로 더 크게) -->
+            <div
+                id="modal-mcdelivery"
+                class="modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalTitleMc"
+                aria-hidden="true"
+                style="--modal-max-w: min(1000px, 96vw); --modal-max-h: 90vh; --modal-mt: 6vh"
+            >
+                <div class="modal__backdrop" data-modal-close></div>
+                <div class="modal__dialog" tabindex="-1">
+                    <div class="modal__body">
+                        <div class="modal__content">
+                            <p class="type">Figma</p>
+                            <h2 id="modalTitleLoc">맥딜리버리</h2>
+                            <p class="desc">
+                                고객 경험을 최우선으로 UI와 서비스 품질을 개선해 이탈을 줄이고,
+                                주문부터 배송까지의 여정을 고도화해 자체 배달 <br />서비스 경쟁력을
+                                강화했습니다.
+                            </p>
+                            <p class="percent">[ 기여도 ] : 디자인 40% , 기획 40%</p>
+                            <div class="btns">
+                                <p class="btn">기획서</p>
+                                <p class="btn">View Page</p>
+                            </div>
+                            <div class="page">
+                                <img
+                                    src="images/medelivery-page.png"
+                                    alt="맥딜리버리 프로토타입 긴 이미지"
+                                    style="width: 390px"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ✅ 개인 작업 슬라이더 -->
+            <section class="con con3_2">
+                <div class="slider-portfolio">
+                    <div class="slide-portfolio">
+                        <div class="slide-bg-img-portfolio">
+                            <img
+                                src="https://p4.wallpaperbetter.com/wallpaper/854/171/599/nintendo-pokemon-scarlet-and-violet-pikachu-hd-wallpaper-preview.jpg"
+                                alt="HOGANGS"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="slide-main-img-portfolio">
+                        <div class="slide-main-img-wrapper-portfolio">
+                            <img
+                                src="https://p4.wallpaperbetter.com/wallpaper/854/171/599/nintendo-pokemon-scarlet-and-violet-pikachu-hd-wallpaper-preview.jpg"
+                                alt="HOGANGS"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="slide-copy-portfolio">
+                        <div class="slide-title-portfolio"><h1>포켓몬스터</h1></div>
+                        <div class="slide-description-portfolio"><p>반려동물 통합 플랫폼</p></div>
+                        <div class="btn-wrapper-portfolio">
+                            <div class="btn-container-portfolio">
+                                <p data-link="https://example.com/hogangs">Visit Website</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="portfolio-footer">
+                    <div class="slider-counter-portfolio">
+                        <div class="count-portfolio"><p>1</p></div>
+                        <p>/</p>
+                        <p>3</p>
+                    </div>
+                </footer>
+            </section>
+
+            <!-- //비디오 -->
+            <section class="con con3_3">
+                <div class="inner">
+                    <div class="video">
+                        <video src="/videos/video.mp4" autoplay muted loop playsinline></video>
+                        <div class="text">
+                            <strong>Between <br />Design and Code</strong>
+                            <p>
+                                퍼블리셔는 디자인과 코드를 잇는 항로를 설계하는 사람이라고
+                                생각합니다.
+                                <br />
+                                감성과 논리가 만나는 그 여정을 이끌며, 사용자가 편안하게 여행하듯
+                                화면을
+                                <br />
+                                경험할 수 있도록 작은 인터랙션에도 진심을 담습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="section3" class="con con4">
+                <div class="inner">
+                    <div class="top">
+                        <strong class="th">TH </strong>
+                        <img src="images/rotation.png" alt="thankyou" />
+                        <strong class="nky">NKY</strong>
+                        <strong>U</strong>
+                    </div>
+
+                    <div class="contact">
+                        <ul>
+                            EMAIL
+                            <li>gkstmftt@naver.com</li>
+                        </ul>
+                        <ul>
+                            GITHUB
+                            <li>github.com/gkstmftt</li>
+                        </ul>
+                        <ul>
+                            PHONE
+                            <li>010-5588-2609</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- GSAP -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollToPlugin.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/MotionPathPlugin.min.js"></script>
+        <!-- Matter.js  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+        <!-- 메인 JS -->
+        <script type="module" src="js/main.js"></script>
+
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({ duration: 1000, once: true, offset: 120 });
+        </script>
+    </body>
+</html>

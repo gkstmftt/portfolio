@@ -1,0 +1,1192 @@
+/* 기본 */
+body {
+    overflow-x: hidden;
+    /* background: #fffefb; */
+    background: #fbfbfb;
+}
+#wrap {
+    position: relative;
+}
+
+/* con 공통 */
+.con {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.con .inner {
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: marquee
+   ───────────────────────────────── */
+.marquee {
+    position: relative;
+    background: #002868;
+    color: #f2f6fb;
+    padding: 10px 2px;
+    height: 74px;
+    font-size: 34px;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.marquee__inner {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+}
+.marquee__part {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 4px;
+}
+.arrow {
+    height: 80px;
+    margin: 0 1em;
+    transform: scaleX(-1);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: flex;
+    align-items: center;
+}
+.arrow.active {
+    transform: scaleX(1);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* con1_2 postcare */
+.con.con1_2 {
+    align-items: flex-start;
+    /* justify-content: center; */
+    /* min-height: auto; */
+    min-height: 130vh;
+}
+.con1_2 .inner {
+    padding: 0;
+}
+.con1_2 {
+    height: auto;
+}
+.gallery {
+    /* width: 100%; */
+    /* height: 1000px; */
+    height: 100vh;
+    /* height: auto; */
+}
+.gallery .imgbox {
+    position: relative;
+    height: 100%;
+}
+.gallery .imgbox li {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.gallery .inner .imgbox li.img1 {
+    transform: translate(-50%, -50%) rotate(5deg);
+    z-index: 1;
+}
+.gallery .inner .imgbox li.img2 {
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(-5deg);
+}
+.gallery .inner .imgbox li.img3 {
+    z-index: 3;
+    transform: translate(-50%, -50%) rotate(7deg);
+}
+.gallery .inner .imgbox li.img4 {
+    transform: translate(-50%, -50%) rotate(-7deg);
+    z-index: 4;
+}
+.gallery .inner .imgbox li.img5 {
+    transform: translate(-50%, -50%) rotate(2deg);
+    z-index: 5;
+}
+/* con1_3 textwarp */
+.con1_3 {
+    padding: 96px 100px;
+    background: #022051;
+    display: block;
+    text-align: start;
+    min-height: 0;
+}
+.con1_3 p {
+    color: rgba(241, 241, 241, 0.7);
+    font-size: 22px;
+    margin-top: 60px;
+    line-height: 34px;
+}
+.con1_3 .title {
+    margin-top: 0;
+    color: #e4ddcd;
+}
+.con1_3 .textBox {
+    font-size: 48px;
+    line-height: 1.4;
+}
+.con1_3 .textBox .mask {
+    display: block;
+}
+.con1_3 .textBox .mask .text {
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
+    -webkit-background-clip: text;
+    background-image: linear-gradient(#fcffb5, #fcffb5);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: con3_1 (팀 작업 카드)
+   ───────────────────────────────── */
+.con3_1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.con3_1 h2 {
+    font-size: 85px;
+    color: #2a394a;
+    font-weight: 600;
+}
+.con3_1 strong {
+    color: #726f67;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 54px;
+}
+.con3_1 .list {
+    display: flex;
+    gap: 54px;
+    margin-bottom: 160px;
+}
+.con3_1 .list .box:hover .img {
+    transform: scale(1.02);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.con3_1 .list .box ul {
+    width: 368px;
+    height: 548px;
+    border-radius: 22px;
+    background: rgba(213, 226, 241, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 40px 14px 10px;
+}
+.con3_1 .list .box ul li {
+    font-size: 16px;
+    font-weight: 500;
+}
+.con3_1 .list .box ul .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #efb408;
+}
+.con3_1 .list .box:nth-of-type(1) ul .title {
+    color: #8dc3bf;
+}
+.con3_1 .list .box:nth-of-type(3) ul .title {
+    color: #00696d;
+}
+.con3_1 .list .box ul .subject {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+.con3_1 .list .box:nth-of-type(2) ul .subject,
+.con3_1 .list .box:nth-of-type(4) ul .subject {
+    /* font-size: 20px; */
+    /* font-weight: 800; */
+    /* margin-top: 10px; */
+}
+.con3_1 .list .box:nth-of-type(2) ul .period,
+.con3_1 .list .box:nth-of-type(4) ul .period {
+    margin-top: 11px;
+}
+.con3_1 .list .box ul .img {
+    margin-top: 10px;
+}
+.con3_1 .list .box ul .period {
+    margin-top: 75px;
+}
+.con3_1 .list .box ul .skill {
+    margin-top: 6px;
+}
+.con3_1 .list .box .textBox {
+    margin-top: 22px;
+    width: 368px;
+    position: relative;
+}
+.con3_1 .list .box .textBox strong {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+}
+.con3_1 .list .box .textBox p {
+    font-size: 16px;
+}
+.con3_1 .list .box .textBox img {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    cursor: pointer;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: con3_2 - Portfolio Slider
+   ───────────────────────────────── */
+.con3_2 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #2f2f15;
+    padding: 0 !important;
+    overflow: hidden;
+}
+.slider-portfolio {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.slide-portfolio {
+    position: absolute;
+    inset: 0;
+}
+.slide-bg-img-portfolio {
+    position: absolute;
+    inset: 0;
+    will-change: clip-path;
+}
+.slide-bg-img-portfolio::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(47, 47, 21, 0.6);
+}
+.slide-bg-img-portfolio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide-main-img-portfolio {
+    position: absolute;
+    top: 28%;
+    left: 45%;
+    width: clamp(280px, 45vw, 45%);
+    height: clamp(220px, 60vh, 60%);
+    z-index: 2;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.slide-main-img-wrapper-portfolio {
+    position: absolute;
+    inset: 0;
+    will-change: clip-path;
+    overflow: hidden;
+}
+.slide-main-img-wrapper-portfolio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+.slide-copy-portfolio {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fffefb;
+    z-index: 2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.slide-title-portfolio {
+    position: relative;
+    width: 600px;
+    max-width: 86vw;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+.slide-title-portfolio h1 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #fffefb;
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 7.2px;
+    white-space: nowrap;
+    will-change: transform;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 10px 0;
+}
+.slide-description-portfolio {
+    position: relative;
+    width: 600px;
+    max-width: 86vw;
+    height: 50px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.slide-description-portfolio p {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #fffefb;
+    font-size: clamp(16px, 2.4vw, 20px);
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    will-change: transform;
+}
+.btn-wrapper-portfolio {
+    position: relative;
+    width: 600px;
+    max-width: 86vw;
+    height: 70px;
+    overflow: hidden;
+}
+.btn-container-portfolio {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: flex;
+    gap: 1rem;
+    will-change: transform;
+}
+.btn-container-portfolio p {
+    padding: 12px 24px;
+    border: 2px solid #fffefb;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    color: #fffefb;
+    background: transparent;
+    white-space: nowrap;
+    user-select: none;
+}
+.btn-container-portfolio p:hover {
+    background: #fffefb;
+    color: #2f2f15;
+}
+.portfolio-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+.portfolio-footer p {
+    color: #fffefb;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.slider-counter-portfolio {
+    display: flex;
+    align-items: center;
+}
+.slider-counter-portfolio p,
+.slider-counter-portfolio > div {
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-counter-portfolio > p {
+    opacity: 0.5;
+}
+.count-portfolio {
+    position: relative;
+    height: 2.5rem;
+    overflow: hidden;
+}
+.count-portfolio p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    line-height: 1;
+    will-change: transform;
+}
+@media (max-width: 900px) {
+    .slide-main-img-portfolio {
+        width: 80%;
+        height: 50%;
+    }
+    .slide-copy-portfolio {
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+        text-align: center;
+        width: 90%;
+    }
+    .slide-title-portfolio,
+    .slide-description-portfolio,
+    .btn-wrapper-portfolio {
+        width: 100%;
+    }
+    .btn-container-portfolio {
+        justify-content: center;
+    }
+}
+.con1 {
+    padding: 150px 100px;
+    position: relative;
+}
+.con1 .inner {
+    padding: 0;
+}
+.con1 .bg {
+    font-size: 224px;
+    color: rgba(120, 162, 210, 0.2);
+    font-weight: 900;
+    line-height: 0.7;
+}
+.con1 .bg .bg1 {
+    position: absolute;
+    /* left: 100px; */
+    left: -310px;
+}
+.con1 .bg .bg2 {
+    bottom: -873px;
+    position: absolute;
+    right: -300px;
+}
+.con1 .passport {
+    background-image: url(/images/passport.png);
+    /* background-position: 0% 0%; */
+    /* height: 900px; */
+    width: 1090px;
+    height: 770px;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 160px;
+}
+.con1 .passport .left {
+    width: 368px;
+    position: absolute;
+    bottom: 140px;
+    left: 141px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.con1 .passport .left ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 12px;
+    font-size: 16px;
+    color: #726f67;
+    margin-right: 40px;
+}
+
+.con1 .passport .left ul li {
+    display: block;
+    width: 262px;
+    text-align: right;
+    border-bottom: 1px dashed #2a394a;
+    color: #2a394a;
+    font-size: 20px;
+    text-align: left;
+}
+
+.con1 .passport .right {
+    /* width: 358px; */
+    position: absolute;
+    right: 122px;
+    top: 76px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.con1 .passport .right ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 16px;
+    color: #726f67;
+}
+.con1 .passport .right ul li {
+    display: flex;
+}
+.con1 .passport .right ul li .desc {
+    text-align: left;
+    color: #2a394a;
+    font-size: 20px;
+}
+.con1 .passport .right ul li .desc p {
+    border-bottom: 1px dashed #2a394a;
+    width: 280px;
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+}
+.con1 .passport .right ul li .desc p img:first-of-type {
+    margin-left: auto;
+}
+.con1 .passport .right ul li .desc p img {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+/* ─────────────────────────────────
+   ✅ 사용: con3_3 (비디오)
+   ───────────────────────────────── */
+.con3_3 {
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    padding-top: 60px;
+    padding-bottom: 160px;
+}
+.con3_3 video {
+    filter: brightness(0.5);
+}
+.con3_3 .video {
+    position: relative;
+}
+.con3_3 .video .text {
+    width: 100%;
+    color: #fffefb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.con3_3 .video .text strong {
+    font-size: 95px;
+    font-weight: 600;
+    line-height: 100px;
+    display: block;
+    margin-bottom: 34px;
+    text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.33);
+}
+.con3_3 .video .text p {
+    font-size: 24px;
+    line-height: 1.8;
+    width: 100%;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: con4 (Contact)
+   ───────────────────────────────── */
+.con4 {
+    background: #f3f3eb;
+    height: 427px;
+}
+.con4 .inner {
+    padding-top: 160px;
+}
+.con4 .top {
+    color: #002868;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.con4 .top strong {
+    font-size: 84px;
+}
+.con4 .top .nky {
+    position: absolute;
+    left: 46%;
+}
+.con4 .top img {
+    animation: spin 6s linear infinite;
+    transform-origin: center center;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.con4 .contact {
+    color: #2f2f15;
+    display: flex;
+    margin-top: 114px;
+    gap: 130px;
+}
+.con4 .contact ul {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    gap: 47px;
+    border-bottom: 3px solid #2f2f15;
+}
+.con4 .contact ul li {
+    font-weight: 400;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: 네비게이션
+   ───────────────────────────────── */
+nav {
+    position: fixed;
+    /* top: -100px; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 94px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 120;
+    /* transition: all 0.3s ease; */
+    /* transform: translate3d(0, -100%, 0); */
+    /* transform: translateY(-100%); */
+    will-change: transform;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 1432px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+nav a::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: rgba(120, 162, 210, 0.5);
+    position: absolute;
+    left: -10px;
+    bottom: -14px;
+    opacity: 0;
+    border-radius: 50%;
+}
+nav a:hover::after {
+    opacity: 0.3;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: home
+   ───────────────────────────────── */
+.home {
+    position: relative;
+    overflow: hidden;
+}
+.home .background {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    transform: scale(1.1);
+}
+.home .visual-img {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -60%);
+    z-index: 1;
+}
+.home .barcode {
+    position: absolute;
+    left: 1027px;
+    top: 376px;
+    width: 52px;
+    height: 210px;
+    z-index: 100;
+}
+.home .barcode img {
+    position: absolute;
+    top: 30px;
+    left: 14px;
+}
+.home .barcode::after {
+    content: '';
+    position: absolute;
+    left: 44px;
+    top: 21px;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: red;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.home .barcode:hover::after {
+    opacity: 1;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: 로딩 오버레이
+   ───────────────────────────────── */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loading-text {
+    color: white;
+    text-align: center;
+}
+.counter {
+    font-size: clamp(80px, 15vw, 200px);
+    font-weight: 900;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.counter span {
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+.logo {
+    font-size: clamp(60px, 12vw, 160px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+}
+.logo span {
+    position: relative;
+    top: 200px;
+    display: inline-block;
+    color: white;
+}
+.loading-bar {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: 스크롤 인디케이터
+   ───────────────────────────────── */
+.scroll-indicator {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.scroll-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #d5e2f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.scroll-dot.active {
+    background: #78a2d2;
+    transform: scale(1.2);
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: 마우스 따라다니는 이미지
+   ───────────────────────────────── */
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: none;
+    will-change: transform;
+}
+.cursor-follower img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+/* ─────────────────────────────────
+   ✅ 사용: 모달
+   ───────────────────────────────── */
+body.modal-open {
+    overflow: hidden;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    overflow-y: auto;
+}
+.modal[aria-hidden='false'] {
+    display: block;
+}
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.modal[aria-hidden='false'] .modal__backdrop {
+    opacity: 1;
+}
+.modal__dialog {
+    position: relative;
+    width: 1170px;
+    /* height: 800px; */
+    /* margin-left: 375px; */
+    max-height: calc(100vh - 120px);
+    margin: 60px auto;
+    overflow: hidden;
+    margin-top: 94px;
+    display: flex;
+    flex-direction: column;
+    background: #fffefb;
+    color: #2f2f15;
+    border-radius: 30px;
+    box-shadow: var(--modal-shadow);
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    outline: 0;
+}
+
+.modal__body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+.modal__body .type {
+    color: #2a394a;
+    font-size: 20px;
+    /* padding: 10px 25px 10px 24px; */
+    border-radius: 44px;
+    border: 1px solid #2a394a;
+    width: 114px;
+    box-sizing: border-box;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal__body h2 {
+    color: #2a394a;
+    font-size: 52px;
+    font-weight: 600;
+    margin: 22px 0;
+}
+.modal__body .desc {
+    font-size: 16px;
+}
+.modal__body .percent {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.modal__body .btns {
+    position: absolute;
+    top: 218px;
+    right: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.modal__body .btn {
+    font-size: 28px;
+    font-weight: 500;
+    border-radius: 45px;
+    border: 1px solid var(--65652-c, #65652c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 220px;
+    height: 50px;
+    font-size: 18px;
+}
+.modal__body .btn:hover {
+    color: red;
+    border: 1px solid red;
+}
+.modal__body .btns .btn:nth-of-type(2) {
+    color: #0057bb;
+    border: 1px solid #0057bb;
+}
+.modal__body .btns .btn:nth-of-type(2):hover {
+    background: #0057bb;
+    color: #fff;
+}
+.modal__content {
+    flex: 1;
+    min-height: 0;
+    padding: 145px 52px;
+    overflow: visible;
+}
+.modal__content img {
+    width: 1044px;
+    display: block;
+    margin: 100px auto;
+}
+.modal__dialog:nth-of-type(4) .modal__content img {
+    width: 390px;
+}
+.modal[aria-hidden='false'] .modal__dialog {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.modal__close:hover {
+    background: #e6e6de;
+}
+.modal__header,
+.modal__footer {
+    padding: 18px 22px;
+    border-bottom: 1px solid #ecebe4;
+}
+.modal__footer {
+    border-top: 1px solid #ecebe4;
+    border-bottom: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.modal__header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+/* === Airplane Intro (ap-*) === */
+.ap-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: #4e4e4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease, transform 1s ease, opacity 0.5s ease;
+}
+.ap-overlay.is-sky {
+    background: #2f86d5;
+}
+.ap-overlay.is-out {
+    transform: translateY(-100%);
+}
+
+.ap-switch {
+    position: relative;
+    width: 500px;
+    height: 220px;
+    border-radius: 110px;
+    background: #848484;
+    overflow: hidden;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s ease, transform 1s ease, opacity 0.6s ease;
+}
+.ap-switch.is-sky {
+    box-shadow: 0 20px 25px rgba(44, 130, 204, 0.5);
+}
+.ap-switch.is-out {
+    transform: scale(1.5) translateY(-150px);
+    opacity: 0;
+}
+
+.ap-btn {
+    position: absolute;
+    inset: auto auto 50% 0;
+    transform: translateY(50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #fff;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 1s ease;
+    left: 0;
+}
+.ap-btn.moved {
+    left: 280px;
+}
+.ap-icon {
+    width: 100px;
+    height: 100px;
+    fill: #494949;
+    transition: fill 0.5s ease;
+}
+.ap-icon.active {
+    fill: #1ab1fd;
+}
+
+.ap-sky {
+    position: absolute;
+    inset: 0;
+    background: #78c7fe;
+    opacity: 0;
+    transition: opacity 1s ease;
+    overflow: hidden;
+}
+.ap-sky.active {
+    opacity: 1;
+}
+.ap-clouds {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    animation: apCloud 15s linear infinite;
+}
+@keyframes apCloud {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.ap-cloud {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50px;
+}
+.ap-cloud::before,
+.ap-cloud::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+}
+.ap-cloud::before {
+    width: 30px;
+    height: 30px;
+    left: 5px;
+    bottom: 8px;
+}
+.ap-cloud::after {
+    width: 25px;
+    height: 25px;
+    right: 5px;
+    bottom: 8px;
+}
+.ap-cloud:nth-child(1) {
+    top: 30px;
+    left: 50px;
+    opacity: 0.7;
+}
+.ap-cloud:nth-child(2) {
+    top: 100px;
+    left: 150px;
+    opacity: 0.6;
+}
+.ap-cloud:nth-child(3) {
+    top: 60px;
+    left: 280px;
+    opacity: 0.8;
+}
+.ap-cloud:nth-child(4) {
+    top: 30px;
+    left: 550px;
+    opacity: 0.7;
+}
+.ap-cloud:nth-child(5) {
+    top: 100px;
+    left: 650px;
+    opacity: 0.6;
+}
+.ap-cloud:nth-child(6) {
+    top: 60px;
+    left: 780px;
+    opacity: 0.8;
+}
+
+.ap-airport {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s ease;
+}
+.ap-lights {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    gap: 30px;
+}
+.ap-lights span {
+    width: 10px;
+    height: 10px;
+    background: #f7bd00;
+    border-radius: 50%;
+}
+.ap-runway {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-left: 10px;
+    border-top: 3px solid #bebebe;
+    border-bottom: 3px solid #bebebe;
+}
+.ap-runway i {
+    width: 25px;
+    height: 8px;
+    background: #fff;
+    display: inline-block;
+}
+
+/* 기존 '랜딩 임시 비활성화'가 있으면 주석 처리(아래 규칙 비활성화)
+.loading-overlay { display: none !important; } */
