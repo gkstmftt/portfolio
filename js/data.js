@@ -7,7 +7,7 @@ export const slideDescriptions = [
     '여행 모티브 인터랙티브 포트폴리오',
 ];
 
-export const imageUrls = ['images/project-1.jpg', 'images/project-3.jpg', 'images/project-4.png'];
+export const imageUrls = ['images/project-1.png', 'images/project-3.jpg', 'images/project-4.png'];
 
 export const buttonConfigs = [['View Website'], ['View Website'], ['View Website']];
 

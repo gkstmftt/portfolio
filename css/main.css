@@ -1,11 +1,33 @@
-/* 기본 */
+/* 을유1945 Regular */
+@font-face {
+    font-family: 'Eulyoo1945';
+    src: url('../fonts/Eulyoo1945-Regular.woff2') format('woff2'),
+        url('../fonts/Eulyoo1945-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 을유1945 SemiBold */
+@font-face {
+    font-family: 'Eulyoo1945';
+    src: url('../fonts/Eulyoo1945-SemiBold.woff2') format('woff2'),
+        url('../fonts/Eulyoo1945-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+html {
+    font-size: 16px;
+}
 body {
+    font-size: 1rem;
     overflow-x: hidden;
-    /* background: #fffefb; */
     background: #fbfbfb;
+    font-family: 'Eulyoo1945', serif;
 }
 #wrap {
     position: relative;
+    overflow-x: hidden;
 }
 
 /* con 공통 */
@@ -17,20 +39,23 @@ body {
     position: relative;
 }
 .con .inner {
-    padding: 100px 0;
+    padding: 100px 20px;
     text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: marquee
+   ✅ marquee
    ───────────────────────────────── */
 .marquee {
     position: relative;
     background: #002868;
     color: #f2f6fb;
     padding: 10px 2px;
-    height: 74px;
-    font-size: 34px;
+    height: clamp(50px, 10vw, 74px);
+    font-size: clamp(20px, 4vw, 34px);
     text-transform: uppercase;
     overflow: hidden;
 }
@@ -46,23 +71,24 @@ body {
     padding: 0 4px;
 }
 .arrow {
-    height: 80px;
+    height: clamp(40px, 8vw, 80px);
     margin: 0 1em;
     transform: scaleX(-1);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     display: flex;
     align-items: center;
 }
+.arrow img {
+    max-width: 100%;
+    height: auto;
+}
 .arrow.active {
     transform: scaleX(1);
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /* con1_2 postcare */
 .con.con1_2 {
     align-items: flex-start;
-    /* justify-content: center; */
-    /* min-height: auto; */
     min-height: 130vh;
 }
 .con1_2 .inner {
@@ -72,10 +98,8 @@ body {
     height: auto;
 }
 .gallery {
-    /* width: 100%; */
-    /* height: 1000px; */
     height: 100vh;
-    /* height: auto; */
+    width: 100%;
 }
 .gallery .imgbox {
     position: relative;
@@ -87,6 +111,11 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
+    max-width: 90vw;
+}
+.gallery .imgbox li img {
+    max-width: 100%;
+    height: auto;
 }
 
 .gallery .inner .imgbox li.img1 {
@@ -109,26 +138,28 @@ body {
     transform: translate(-50%, -50%) rotate(2deg);
     z-index: 5;
 }
+
 /* con1_3 textwarp */
 .con1_3 {
-    padding: 96px 100px;
+    padding: clamp(40px, 8vw, 96px) clamp(20px, 8vw, 100px);
     background: #022051;
     display: block;
     text-align: start;
     min-height: 0;
+    font-family: 'pretendard';
 }
 .con1_3 p {
     color: rgba(241, 241, 241, 0.7);
-    font-size: 22px;
-    margin-top: 60px;
-    line-height: 34px;
+    font-size: clamp(14px, 2.5vw, 22px);
+    margin-top: clamp(30px, 5vw, 60px);
+    line-height: 1.6;
 }
 .con1_3 .title {
     margin-top: 0;
     color: #e4ddcd;
 }
 .con1_3 .textBox {
-    font-size: 48px;
+    font-size: clamp(24px, 2.5vw, 48px);
     line-height: 1.4;
 }
 .con1_3 .textBox .mask {
@@ -143,52 +174,63 @@ body {
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: con3_1 (팀 작업 카드)
+   ✅ con3_1 (팀 작업 카드)
    ───────────────────────────────── */
 .con3_1 {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: clamp(50px, 10vw, 100px);
 }
 .con3_1 h2 {
-    font-size: 85px;
+    font-size: clamp(42px, 4.42vw, 85px);
     color: #2a394a;
     font-weight: 600;
 }
 .con3_1 strong {
     color: #726f67;
-    font-size: 20px;
+    font-size: clamp(16px, 1.04vw, 20px);
     display: block;
-    margin-bottom: 54px;
+    margin-bottom: clamp(30px, 5vw, 54px);
 }
 .con3_1 .list {
     display: flex;
-    gap: 54px;
-    margin-bottom: 160px;
+    flex-wrap: wrap;
+    gap: clamp(20px, 4vw, 54px);
+    margin-bottom: clamp(80px, 12vw, 160px);
+    font-family: 'pretendard';
+    justify-content: center;
+    margin: 0 auto clamp(80px, 12vw, 160px);
 }
+.con3_1 .list .box {
+    flex: 0 0 auto;
+    /* width: clamp(260px, 19.3vw, 370px); */
+}
+
 .con3_1 .list .box:hover .img {
     transform: scale(1.02);
     transition: 0.2s ease;
     cursor: pointer;
 }
 .con3_1 .list .box ul {
-    width: 368px;
-    height: 548px;
+    width: clamp(260px, 19.3vw, 370px);
+    /* width: 100%; */
+    height: auto;
+    min-height: 500px;
     border-radius: 22px;
     background: rgba(213, 226, 241, 0.3);
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     padding: 40px 14px 10px;
+    box-sizing: border-box;
 }
 .con3_1 .list .box ul li {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 500;
 }
 .con3_1 .list .box ul .title {
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
     font-weight: 600;
     color: #efb408;
 }
@@ -200,40 +242,43 @@ body {
 }
 .con3_1 .list .box ul .subject {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-weight: 800;
 }
-.con3_1 .list .box:nth-of-type(2) ul .subject,
-.con3_1 .list .box:nth-of-type(4) ul .subject {
-    /* font-size: 20px; */
-    /* font-weight: 800; */
-    /* margin-top: 10px; */
-}
-.con3_1 .list .box:nth-of-type(2) ul .period,
-.con3_1 .list .box:nth-of-type(4) ul .period {
-    margin-top: 11px;
-}
+
 .con3_1 .list .box ul .img {
-    margin-top: 10px;
+    width: 100%;
+}
+.con3_1 .list .box ul .img img {
+    max-width: 100%;
+    height: auto;
 }
 .con3_1 .list .box ul .period {
-    margin-top: 75px;
+    margin-top: clamp(30px, 0.28vw, 40px);
 }
 .con3_1 .list .box ul .skill {
     margin-top: 6px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.con3_1 .list .box ul .skill img {
+    max-width: 30px;
+    height: auto;
 }
 .con3_1 .list .box .textBox {
     margin-top: 22px;
-    width: 368px;
+    width: 100%;
+    max-width: 368px;
     position: relative;
 }
 .con3_1 .list .box .textBox strong {
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-weight: 600;
     display: block;
 }
 .con3_1 .list .box .textBox p {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 .con3_1 .list .box .textBox img {
     position: absolute;
@@ -243,9 +288,10 @@ body {
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: con3_2 - Portfolio Slider
+   ✅ con3_2 - Portfolio Slider
    ───────────────────────────────── */
 .con3_2 {
+    font-family: 'pretendard';
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -312,9 +358,8 @@ body {
 }
 .slide-title-portfolio {
     position: relative;
-    width: 600px;
-    max-width: 86vw;
-    height: 120px;
+    width: clamp(280px, 90vw, 600px);
+    height: clamp(60px, 15vw, 120px);
     margin-bottom: 1.5rem;
     overflow: hidden;
 }
@@ -323,10 +368,10 @@ body {
     top: 10px;
     left: 0;
     color: #fffefb;
-    font-size: clamp(42px, 7vw, 80px);
+    font-size: clamp(32px, 4vw, 80px);
     font-weight: 600;
     line-height: 1;
-    letter-spacing: 7.2px;
+    letter-spacing: clamp(2px, 1vw, 7.2px);
     white-space: nowrap;
     will-change: transform;
     border-top: 2px solid #fff;
@@ -335,8 +380,7 @@ body {
 }
 .slide-description-portfolio {
     position: relative;
-    width: 600px;
-    max-width: 86vw;
+    width: clamp(280px, 90vw, 600px);
     height: 50px;
     margin-bottom: 2rem;
     overflow: hidden;
@@ -346,7 +390,7 @@ body {
     top: 10px;
     left: 0;
     color: #fffefb;
-    font-size: clamp(16px, 2.4vw, 20px);
+    font-size: clamp(14px, 1.05vw, 20px);
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -354,8 +398,7 @@ body {
 }
 .btn-wrapper-portfolio {
     position: relative;
-    width: 600px;
-    max-width: 86vw;
+    width: clamp(280px, 90vw, 600px);
     height: 70px;
     overflow: hidden;
 }
@@ -373,7 +416,7 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 16px;
+    font-size: clamp(14px, 0.99vw, 16px);
     color: #fffefb;
     background: transparent;
     white-space: nowrap;
@@ -388,7 +431,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 3rem;
+    padding: clamp(1rem, 3vw, 3rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -396,7 +439,7 @@ body {
 }
 .portfolio-footer p {
     color: #fffefb;
-    font-size: 0.875rem;
+    font-size: clamp(12px, 2vw, 0.875rem);
     font-weight: 500;
 }
 .slider-counter-portfolio {
@@ -427,103 +470,82 @@ body {
     line-height: 1;
     will-change: transform;
 }
-@media (max-width: 900px) {
-    .slide-main-img-portfolio {
-        width: 80%;
-        height: 50%;
-    }
-    .slide-copy-portfolio {
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -75%);
-        text-align: center;
-        width: 90%;
-    }
-    .slide-title-portfolio,
-    .slide-description-portfolio,
-    .btn-wrapper-portfolio {
-        width: 100%;
-    }
-    .btn-container-portfolio {
-        justify-content: center;
-    }
-}
+
+/* con1 - About */
 .con1 {
-    padding: 150px 100px;
+    padding: clamp(80px, 12vw, 150px) clamp(20px, 8vw, 100px);
     position: relative;
 }
 .con1 .inner {
     padding: 0;
 }
 .con1 .bg {
-    font-size: 224px;
+    font-family: 'pretendard';
+    font-size: clamp(80px, 11.67vw, 224px);
     color: rgba(120, 162, 210, 0.2);
     font-weight: 900;
     line-height: 0.7;
 }
 .con1 .bg .bg1 {
     position: absolute;
-    /* left: 100px; */
-    left: -310px;
+    left: clamp(0px, -5.52vw, -310px);
 }
 .con1 .bg .bg2 {
-    bottom: -873px;
+    bottom: clamp(-870px, -60vw, -873px);
     position: absolute;
-    right: -300px;
+    right: clamp(-100px, -20vw, -300px);
 }
 .con1 .passport {
     background-image: url(/images/passport.png);
-    /* background-position: 0% 0%; */
-    /* height: 900px; */
-    width: 1090px;
-    height: 770px;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    max-width: 1090px;
+    height: 0;
+    padding-bottom: 56.64%; /* 770/1090 비율 유지 */
     background-repeat: no-repeat;
     position: relative;
-    margin-top: 160px;
+    margin: clamp(80px, 12vw, 160px) auto 0;
 }
 .con1 .passport .left {
-    width: 368px;
+    width: clamp(200px, 30vw, 368px);
     position: absolute;
-    bottom: 140px;
-    left: 141px;
+    bottom: clamp(80px, 12vw, 140px);
+    left: clamp(60px, 12vw, 141px);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: clamp(10px, 1.5vw, 16px);
 }
 .con1 .passport .left ul {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    gap: 12px;
-    font-size: 16px;
+    gap: clamp(6px, 1vw, 12px);
+    font-size: clamp(12px, 1.5vw, 16px);
     color: #726f67;
-    margin-right: 40px;
+    margin-right: clamp(20px, 3vw, 40px);
 }
-
 .con1 .passport .left ul li {
     display: block;
-    width: 262px;
-    text-align: right;
+    width: clamp(150px, 22vw, 262px);
+    text-align: left;
     border-bottom: 1px dashed #2a394a;
     color: #2a394a;
-    font-size: 20px;
-    text-align: left;
+    font-size: clamp(14px, 1.8vw, 20px);
 }
-
 .con1 .passport .right {
-    /* width: 358px; */
     position: absolute;
-    right: 122px;
-    top: 76px;
+    right: clamp(60px, 10vw, 122px);
+    top: clamp(40px, 7vw, 76px);
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: clamp(12px, 2vw, 24px);
 }
 .con1 .passport .right ul {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    font-size: 16px;
+    gap: clamp(6px, 1vw, 12px);
+    font-size: clamp(12px, 1.5vw, 16px);
     color: #726f67;
 }
 .con1 .passport .right ul li {
@@ -532,11 +554,11 @@ body {
 .con1 .passport .right ul li .desc {
     text-align: left;
     color: #2a394a;
-    font-size: 20px;
+    font-size: clamp(14px, 1.8vw, 20px);
 }
 .con1 .passport .right ul li .desc p {
     border-bottom: 1px dashed #2a394a;
-    width: 280px;
+    width: clamp(150px, 25vw, 280px);
     display: flex;
     align-items: flex-end;
     gap: 0;
@@ -545,22 +567,27 @@ body {
     margin-left: auto;
 }
 .con1 .passport .right ul li .desc p img {
+    max-width: 20px;
+    height: auto;
     display: flex;
     align-items: flex-end;
     margin-bottom: 5px;
 }
+
 /* ─────────────────────────────────
-   ✅ 사용: con3_3 (비디오)
+   ✅ con3_3 (비디오)
    ───────────────────────────────── */
 .con3_3 {
+    font-family: 'pretendard';
     width: 100%;
     height: auto;
     transform-origin: center center;
-    padding-top: 60px;
-    padding-bottom: 160px;
+    padding: clamp(30px, 5vw, 60px) 0 clamp(80px, 12vw, 160px);
 }
 .con3_3 video {
     filter: brightness(0.5);
+    width: 100%;
+    max-width: 100%;
 }
 .con3_3 .video {
     position: relative;
@@ -573,30 +600,32 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    padding: 0 20px;
 }
 .con3_3 .video .text strong {
-    font-size: 95px;
+    font-size: clamp(32px, 4.94vw, 95px);
     font-weight: 600;
-    line-height: 100px;
+    line-height: 1.2;
     display: block;
-    margin-bottom: 34px;
+    margin-bottom: clamp(20px, 3vw, 34px);
     text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.33);
 }
 .con3_3 .video .text p {
-    font-size: 24px;
+    font-size: clamp(14px, 1.25vw, 24px);
     line-height: 1.8;
     width: 100%;
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: con4 (Contact)
+   ✅ con4 (Contact)
    ───────────────────────────────── */
 .con4 {
     background: #f3f3eb;
-    height: 427px;
+    min-height: clamp(300px, 50vh, 427px);
+    height: auto;
 }
 .con4 .inner {
-    padding-top: 160px;
+    padding-top: clamp(80px, 12vw, 160px);
 }
 .con4 .top {
     color: #002868;
@@ -604,9 +633,11 @@ body {
     align-items: center;
     position: relative;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .con4 .top strong {
-    font-size: 84px;
+    font-size: clamp(42px, 8vw, 84px);
 }
 .con4 .top .nky {
     position: absolute;
@@ -615,6 +646,8 @@ body {
 .con4 .top img {
     animation: spin 6s linear infinite;
     transform-origin: center center;
+    max-width: clamp(60px, 18.43vw, 354px);
+    height: auto;
 }
 @keyframes spin {
     from {
@@ -627,52 +660,61 @@ body {
 .con4 .contact {
     color: #2f2f15;
     display: flex;
-    margin-top: 114px;
-    gap: 130px;
+    flex-wrap: wrap;
+    margin-top: clamp(50px, 10vw, 114px);
+    gap: clamp(20px, 8vw, 130px);
+    justify-content: center;
 }
 .con4 .contact ul {
-    font-size: 22px;
+    font-size: clamp(16px, 1.15vw, 22px);
     font-weight: 600;
     display: flex;
-    gap: 47px;
-    border-bottom: 3px solid #2f2f15;
+    gap: clamp(10px, 2.44vw, 47px);
+    border-bottom: 2.5px solid #78a2d2;
+    min-width: 200px;
+    color: #6287ac;
+    font-size: clamp(14px, 0.93vw, 18px);
+    display: flex;
+    align-items: flex-end;
 }
 .con4 .contact ul li {
-    font-weight: 400;
+    font-weight: 700;
+    color: #002868;
+    font-size: clamp(16px, 1.15vw, 22px);
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: 네비게이션
+   ✅ 네비게이션
    ───────────────────────────────── */
 nav {
+    font-family: 'pretendard';
     position: fixed;
-    /* top: -100px; */
     top: 0;
     left: 0;
     width: 100%;
-    height: 94px;
+    height: clamp(60px, 10vw, 86px);
     text-align: center;
     align-items: center;
     display: flex;
+    justify-content: SPACE-AROUND;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 120;
-    /* transition: all 0.3s ease; */
-    /* transform: translate3d(0, -100%, 0); */
-    /* transform: translateY(-100%); */
     will-change: transform;
+    gap: 30%;
+    font-size: 1.25rem;
 }
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
-    margin-left: 1432px;
+    gap: clamp(20px, 3vw, 40px);
+    margin: 0;
+    padding: 0 20px;
 }
 nav a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -690,58 +732,76 @@ nav a::after {
 nav a:hover::after {
     opacity: 0.3;
 }
-
+nav strong {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+nav strong > a:hover::after {
+    opacity: 0;
+}
 /* ─────────────────────────────────
-   ✅ 사용: home
+   ✅ home
    ───────────────────────────────── */
 .home {
     position: relative;
     overflow: hidden;
+    height: 100vh;
 }
 .home .background {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     transform: scale(1.1);
 }
-.home .visual-img {
+
+/* ✅ 새로 추가: 티켓 래퍼 */
+.home .ticket-wrap {
     position: absolute;
     left: 50%;
     top: 60%;
     transform: translate(-50%, -60%);
-    z-index: 1;
+    width: clamp(600px, 70vw, 800px); /* 티켓 전체 크기 */
+    max-width: 90vw;
 }
+
+/* ✅ 티켓 이미지는 래퍼 안에서 100% */
+.home .visual-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ✅ 바코드는 티켓 래퍼 기준 % 포지션 */
 .home .barcode {
     position: absolute;
-    left: 1027px;
-    top: 376px;
-    width: 52px;
-    height: 210px;
-    z-index: 100;
+    top: 26%;
+    left: 60%;
+    width: 6%;
+    height: auto;
+    z-index: 10;
 }
 .home .barcode img {
-    position: absolute;
-    top: 30px;
-    left: 14px;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 .home .barcode::after {
     content: '';
     position: absolute;
-    left: 44px;
-    top: 21px;
-    transform: translateX(-50%);
-    width: 3px;
+    display: block;
+    width: 2px;
     height: 100%;
     background: red;
+    top: 0;
+    left: 50%;
+    z-index: 20;
     opacity: 0;
-    transition: opacity 0.3s ease;
 }
 .home .barcode:hover::after {
     opacity: 1;
 }
-
 /* ─────────────────────────────────
-   ✅ 사용: 로딩 오버레이
+   ✅ 로딩 오버레이
    ───────────────────────────────── */
 .loading-overlay {
     position: fixed;
@@ -789,13 +849,12 @@ nav a:hover::after {
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
+    width: clamp(200px, 60vw, 300px);
     height: 4px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
     overflow: hidden;
 }
-
 .loading-progress {
     height: 100%;
     background: linear-gradient(90deg, #ff6b6b, #ffd93d);
@@ -805,11 +864,11 @@ nav a:hover::after {
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: 스크롤 인디케이터
+   ✅ 스크롤 인디케이터
    ───────────────────────────────── */
 .scroll-indicator {
     position: fixed;
-    right: 30px;
+    right: clamp(15px, 3vw, 30px);
     top: 50%;
     transform: translateY(-50%);
     z-index: 50;
@@ -818,8 +877,8 @@ nav a:hover::after {
     gap: 15px;
 }
 .scroll-dot {
-    width: 14px;
-    height: 14px;
+    width: clamp(10px, 1.5vw, 14px);
+    height: clamp(10px, 1.5vw, 14px);
     border-radius: 50%;
     background: #d5e2f1;
     cursor: pointer;
@@ -831,7 +890,7 @@ nav a:hover::after {
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: 마우스 따라다니는 이미지
+   ✅ 마우스 따라다니는 이미지
    ───────────────────────────────── */
 .cursor-follower {
     position: fixed;
@@ -844,13 +903,13 @@ nav a:hover::after {
     will-change: transform;
 }
 .cursor-follower img {
-    width: 80px;
+    width: clamp(50px, 8vw, 80px);
     height: auto;
     display: block;
 }
 
 /* ─────────────────────────────────
-   ✅ 사용: 모달
+   ✅ 모달
    ───────────────────────────────── */
 body.modal-open {
     overflow: hidden;
@@ -878,25 +937,23 @@ body.modal-open {
 }
 .modal__dialog {
     position: relative;
-    width: 1170px;
-    /* height: 800px; */
-    /* margin-left: 375px; */
+    width: 90%;
+    max-width: 1170px;
     max-height: calc(100vh - 120px);
-    margin: 60px auto;
+    margin: clamp(20px, 8vh, 60px) auto;
     overflow: hidden;
-    margin-top: 94px;
+    margin-top: clamp(80px, 10vh, 94px);
     display: flex;
     flex-direction: column;
     background: #fffefb;
     color: #2f2f15;
     border-radius: 30px;
-    box-shadow: var(--modal-shadow);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transform: translateY(12px) scale(0.98);
     transition: opacity 0.25s ease, transform 0.25s ease;
     outline: 0;
 }
-
 .modal__body {
     position: relative;
     flex: 1;
@@ -909,11 +966,12 @@ body.modal-open {
 }
 .modal__body .type {
     color: #2a394a;
-    font-size: 20px;
-    /* padding: 10px 25px 10px 24px; */
+    font-size: clamp(16px, 1.04vw, 20px);
     border-radius: 44px;
     border: 1px solid #2a394a;
-    width: 114px;
+    width: auto;
+    max-width: 114px;
+    padding: 10px 20px;
     box-sizing: border-box;
     height: 40px;
     display: flex;
@@ -922,63 +980,77 @@ body.modal-open {
 }
 .modal__body h2 {
     color: #2a394a;
-    font-size: 52px;
+    font-size: clamp(32px, 5vw, 52px);
     font-weight: 600;
     margin: 22px 0;
 }
 .modal__body .desc {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.6;
 }
 .modal__body .percent {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     margin-top: 10px;
 }
 .modal__body .btns {
     position: absolute;
-    top: 218px;
-    right: 52px;
+    top: 30%;
+    right: 4%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 12px;
+    /* margin-top: 20px; */
+    flex-direction: column;
+    /* gap: 10px; */
 }
 .modal__body .btn {
-    font-size: 28px;
+    font-size: clamp(14px, 1vw, 18px);
     font-weight: 500;
     border-radius: 45px;
-    border: 1px solid var(--65652-c, #65652c);
+    border: 1px solid #65652c;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: 220px;
-    height: 50px;
-    font-size: 18px;
+    width: auto;
+    min-width: clamp(150px, 11.45vw, 220px);
+    height: clamp(40px, 2.6vw, 50px);
+    padding: 0 20px;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 .modal__body .btn:hover {
     color: red;
     border: 1px solid red;
 }
-.modal__body .btns .btn:nth-of-type(2) {
+.modal__body .btns a:nth-child(2) .btn {
     color: #0057bb;
     border: 1px solid #0057bb;
 }
-.modal__body .btns .btn:nth-of-type(2):hover {
+.modal__body .btns a:nth-child(2) .btn:hover {
     background: #0057bb;
     color: #fff;
+}
+
+.modal__body .btns a {
+    text-decoration: none;
 }
 .modal__content {
     flex: 1;
     min-height: 0;
-    padding: 145px 52px;
+    padding: clamp(40px, 8vw, 145px) clamp(20px, 4vw, 52px);
     overflow: visible;
 }
 .modal__content img {
-    width: 1044px;
+    width: 100%;
+    max-width: 1044px;
     display: block;
-    margin: 100px auto;
+    margin: clamp(50px, 8vw, 100px) auto;
+    height: auto;
 }
 .modal__dialog:nth-of-type(4) .modal__content img {
-    width: 390px;
+    width: 100%;
+    max-width: 390px;
 }
 .modal[aria-hidden='false'] .modal__dialog {
     opacity: 1;
@@ -1000,10 +1072,11 @@ body.modal-open {
     justify-content: flex-end;
 }
 .modal__header h2 {
-    font-size: 22px;
+    font-size: clamp(18px, 2.5vw, 22px);
     font-weight: 700;
     margin: 0;
 }
+
 /* === Airplane Intro (ap-*) === */
 .ap-overlay {
     position: fixed;
@@ -1014,6 +1087,7 @@ body.modal-open {
     align-items: center;
     justify-content: center;
     transition: background 0.5s ease, transform 1s ease, opacity 0.5s ease;
+    padding: 20px;
 }
 .ap-overlay.is-sky {
     background: #2f86d5;
@@ -1021,12 +1095,11 @@ body.modal-open {
 .ap-overlay.is-out {
     transform: translateY(-100%);
 }
-
 .ap-switch {
     position: relative;
-    width: 500px;
-    height: 220px;
-    border-radius: 110px;
+    width: clamp(300px, 80vw, 500px);
+    height: clamp(132px, 30vw, 220px);
+    border-radius: clamp(66px, 15vw, 110px);
     background: #848484;
     overflow: hidden;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
@@ -1039,13 +1112,12 @@ body.modal-open {
     transform: scale(1.5) translateY(-150px);
     opacity: 0;
 }
-
 .ap-btn {
     position: absolute;
     inset: auto auto 50% 0;
     transform: translateY(50%);
-    width: 220px;
-    height: 220px;
+    width: clamp(132px, 30vw, 220px);
+    height: clamp(132px, 30vw, 220px);
     border-radius: 50%;
     background: #fff;
     border: 0;
@@ -1057,18 +1129,17 @@ body.modal-open {
     left: 0;
 }
 .ap-btn.moved {
-    left: 280px;
+    left: clamp(168px, 50vw, 280px);
 }
 .ap-icon {
-    width: 100px;
-    height: 100px;
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
     fill: #494949;
     transition: fill 0.5s ease;
 }
 .ap-icon.active {
     fill: #1ab1fd;
 }
-
 .ap-sky {
     position: absolute;
     inset: 0;
@@ -1097,8 +1168,8 @@ body.modal-open {
 }
 .ap-cloud {
     position: absolute;
-    width: 50px;
-    height: 20px;
+    width: clamp(30px, 8vw, 50px);
+    height: clamp(12px, 3vw, 20px);
     background: #fff;
     border-radius: 50px;
 }
@@ -1110,14 +1181,14 @@ body.modal-open {
     border-radius: 50%;
 }
 .ap-cloud::before {
-    width: 30px;
-    height: 30px;
+    width: clamp(18px, 5vw, 30px);
+    height: clamp(18px, 5vw, 30px);
     left: 5px;
     bottom: 8px;
 }
 .ap-cloud::after {
-    width: 25px;
-    height: 25px;
+    width: clamp(15px, 4vw, 25px);
+    height: clamp(15px, 4vw, 25px);
     right: 5px;
     bottom: 8px;
 }
@@ -1151,7 +1222,6 @@ body.modal-open {
     left: 780px;
     opacity: 0.8;
 }
-
 .ap-airport {
     position: absolute;
     inset: 0;
@@ -1160,15 +1230,15 @@ body.modal-open {
     transition: transform 1s ease;
 }
 .ap-lights {
-    height: 40px;
+    height: clamp(24px, 6vw, 40px);
     display: flex;
     align-items: center;
-    padding-left: 50px;
-    gap: 30px;
+    padding-left: clamp(20px, 8vw, 50px);
+    gap: clamp(15px, 5vw, 30px);
 }
 .ap-lights span {
-    width: 10px;
-    height: 10px;
+    width: clamp(6px, 1.5vw, 10px);
+    height: clamp(6px, 1.5vw, 10px);
     background: #f7bd00;
     border-radius: 50%;
 }
@@ -1176,17 +1246,128 @@ body.modal-open {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: clamp(15px, 6vw, 35px);
     padding-left: 10px;
     border-top: 3px solid #bebebe;
     border-bottom: 3px solid #bebebe;
 }
 .ap-runway i {
-    width: 25px;
-    height: 8px;
+    width: clamp(15px, 4vw, 25px);
+    height: clamp(5px, 1.5vw, 8px);
     background: #fff;
     display: inline-block;
 }
 
-/* 기존 '랜딩 임시 비활성화'가 있으면 주석 처리(아래 규칙 비활성화)
-.loading-overlay { display: none !important; } */
+/* ─────────────────────────────────
+   ✅ 미디어 쿼리 - 태블릿
+   ───────────────────────────────── */
+@media (max-width: 900px) {
+    .slide-main-img-portfolio {
+        width: 80%;
+        height: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .slide-copy-portfolio {
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+        text-align: center;
+        width: 90%;
+    }
+    .slide-title-portfolio,
+    .slide-description-portfolio,
+    .btn-wrapper-portfolio {
+        width: 100%;
+    }
+    .btn-container-portfolio {
+        justify-content: center;
+    }
+    .con1 .passport .left,
+    .con1 .passport .right {
+        position: static;
+        width: 100%;
+        max-width: none;
+        margin: 20px 0;
+    }
+    .con1 .passport {
+        padding-bottom: 100%;
+        background-size: 90%;
+    }
+    .con4 .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .con4 .contact ul {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+/* ─────────────────────────────────
+   ✅ 미디어 쿼리 - 모바일
+   ───────────────────────────────── */
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .con .inner {
+        padding: 60px 15px;
+    }
+    .con1 {
+        padding: 60px 15px;
+    }
+    .con1 .passport {
+        background-size: contain;
+        padding-bottom: 120%;
+    }
+    .con3_1 .list {
+        gap: 20px;
+    }
+    .con3_1 .list .box ul {
+        min-height: 450px;
+    }
+    nav ul {
+        gap: 15px;
+    }
+    .modal__dialog {
+        width: 95%;
+        margin: 15px auto;
+        border-radius: 20px;
+    }
+    .modal__content {
+        padding: 30px 15px;
+    }
+    .modal__body .btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    .modal__body .btn {
+        width: 100%;
+    }
+    .scroll-indicator {
+        right: 10px;
+        gap: 10px;
+    }
+    .gallery .imgbox li {
+        max-width: 95vw;
+    }
+    .con1_3 {
+        padding: 40px 20px;
+    }
+    .ap-switch {
+        width: 90vw;
+        max-width: 400px;
+    }
+    .cursor-follower {
+        display: none !important;
+    }
+    .home .barcode {
+        display: none;
+    }
+    .con4 .top {
+        gap: 5px;
+    }
+}
