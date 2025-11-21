@@ -12,7 +12,7 @@ export const imageUrls = ['images/project-1.png', 'images/project-3.jpg', 'image
 export const buttonConfigs = [['View Website'], ['View Website'], ['View Website']];
 
 export const buttonLinks = [
-    ['https://example.com/hogangs'],
+    ['https://seoul-project-ev2m.vercel.app/'],
     ['https://museum-ebon.vercel.app/'],
     ['https://portfolio-nu-nine-33.vercel.app/'],
 ];

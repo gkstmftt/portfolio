@@ -563,6 +563,7 @@ body {
     align-items: flex-end;
     gap: 0;
 }
+
 .con1 .passport .right ul li .desc p img:first-of-type {
     margin-left: auto;
 }
